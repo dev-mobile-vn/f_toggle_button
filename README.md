@@ -21,7 +21,19 @@ Create toggle button with one line code and customize easily
 
 ```dart
 FToggleButton(
-    isEnable: false,
+isEnable: false,
+onChangeStatus: (bool value) {
+
+},
+bgSwitchLeft: Colors.white,
+bgSwitchRight: Theme.of(context).colorScheme.primary,
+bgDisable: Colors.grey.withOpacity(0.5),
+borderColorEnable: Theme.of(context).colorScheme.primary.withOpacity(0.5),
+borderColorDisEnable: Colors.grey.withOpacity(0.5),
+);
+
+FToggleButton(
+    isEnable: true,
     onChangeStatus: (bool value) {
     
     },
