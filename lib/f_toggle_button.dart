@@ -2,28 +2,29 @@ library f_toggle_button;
 
 import 'package:flutter/material.dart';
 
+
 class FToggleButton extends StatefulWidget {
   final bool isEnable;
   final Function(bool) onChangeStatus;
   final double width, height;
   final double widthSwitch, heightSwitch;
-  final Color bgSwitchLeft, bgDisable;
+  final Color bgCircleDisable, bgDisable;
   final Color borderColorEnable, borderColorDisEnable;
-  final Color bgSwitchRight;
+  final Color bgCircleEnable;
 
   const FToggleButton({
     super.key,
     required this.isEnable,
     required this.onChangeStatus,
-    this.width = 48,
-    this.height = 24,
-    required this.bgSwitchRight,
-    required this.bgSwitchLeft,
+    required this.bgCircleEnable,
+    required this.bgCircleDisable,
     required this.bgDisable,
     required this.borderColorEnable,
     required this.borderColorDisEnable,
     this.widthSwitch = 22,
     this.heightSwitch = 24,
+    this.width = 48,
+    this.height = 24,
   });
 
   @override
@@ -53,7 +54,7 @@ class _FToggleButtonState extends State<FToggleButton> {
           height: widget.height,
           padding: const EdgeInsets.all(2),
           decoration: BoxDecoration(
-            color: isEnable ? widget.bgSwitchLeft : widget.bgDisable,
+            color: isEnable ? widget.bgCircleDisable : widget.bgDisable,
             border: Border.all(
                 color: isEnable
                     ? widget.borderColorEnable
@@ -66,7 +67,7 @@ class _FToggleButtonState extends State<FToggleButton> {
             height: widget.heightSwitch,
             width: widget.widthSwitch,
             decoration: BoxDecoration(
-                color: isEnable ? widget.bgSwitchRight : Colors.white,
+                color: isEnable ? widget.bgCircleEnable : Colors.white,
                 shape: BoxShape.circle),
           )),
     );

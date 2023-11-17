@@ -51,24 +51,24 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             FToggleButton(
-              isEnable: false,
+              isEnable: true,
               onChangeStatus: (bool value) {
 
               },
-              bgSwitchLeft: Colors.white,
-              bgSwitchRight: Theme.of(context).colorScheme.primary,
+              bgCircleDisable: Colors.white,
+              bgCircleEnable: Theme.of(context).colorScheme.primary,
               bgDisable: Colors.grey.withOpacity(0.5),
               borderColorEnable: Theme.of(context).colorScheme.primary.withOpacity(0.5),
               borderColorDisEnable: Colors.grey.withOpacity(0.5),
             ),
             const SizedBox(height: 24,),
             FToggleButton(
-              isEnable: true,
+              isEnable: false,
               onChangeStatus: (bool value) {
 
               },
-              bgSwitchLeft: Colors.white,
-              bgSwitchRight: Theme.of(context).colorScheme.primary,
+              bgCircleDisable: Colors.white,
+              bgCircleEnable: Theme.of(context).colorScheme.primary,
               bgDisable: Colors.grey.withOpacity(0.5),
               borderColorEnable: Theme.of(context).colorScheme.primary.withOpacity(0.5),
               borderColorDisEnable: Colors.grey.withOpacity(0.5),
