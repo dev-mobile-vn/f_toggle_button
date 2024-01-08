@@ -1,6 +1,7 @@
 name: f_toggle_button
 description: Create toggle button.
 version: 0.0.4
+publish_to: 'none'
 repository: "https://github.com/josephtruong/f_toggle_button"
 
 environment:
@@ -10,6 +11,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+  loading:
+    git:
+      url: https://github.com/josephtruong/loading
 
 dev_dependencies:
   flutter_test:
