@@ -49,5 +49,5 @@ FToggleButton(
 - Screenshot
 
 
-   ![toggle_button.png](..%2F..%2Ftoggle_button.png)
+   ![toggle_button.png](https://raw.githubusercontent.com/dev-mobile-vn/f_toggle_button/master/toggle_button.png)
 # switch_button
