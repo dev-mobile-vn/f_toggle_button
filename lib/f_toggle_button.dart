@@ -1,7 +1,6 @@
 library f_toggle_button;
 
 import 'package:flutter/material.dart';
-import 'package:loading/loading.dart';
 
 
 class FToggleButton extends StatefulWidget {
@@ -43,40 +42,34 @@ class _FToggleButtonState extends State<FToggleButton> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        GestureDetector(
-          onTap: () {
-            setState(() {
-              isEnable = !isEnable;
-            });
-            widget.onChangeStatus(isEnable);
-          },
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          isEnable = !isEnable;
+        });
+        widget.onChangeStatus(isEnable);
+      },
+      child: Container(
+          width: widget.width,
+          height: widget.height,
+          padding: const EdgeInsets.all(2),
+          decoration: BoxDecoration(
+            color: isEnable ? widget.bgCircleDisable : widget.bgDisable,
+            border: Border.all(
+                color: isEnable
+                    ? widget.borderColorEnable
+                    : widget.borderColorDisEnable,
+                width: isEnable ? 1 : 0),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          alignment: isEnable ? Alignment.centerRight : Alignment.centerLeft,
           child: Container(
-              width: widget.width,
-              height: widget.height,
-              padding: const EdgeInsets.all(2),
-              decoration: BoxDecoration(
-                color: isEnable ? widget.bgCircleDisable : widget.bgDisable,
-                border: Border.all(
-                    color: isEnable
-                        ? widget.borderColorEnable
-                        : widget.borderColorDisEnable,
-                    width: isEnable ? 1 : 0),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              alignment: isEnable ? Alignment.centerRight : Alignment.centerLeft,
-              child: Container(
-                height: widget.heightSwitch,
-                width: widget.widthSwitch,
-                decoration: BoxDecoration(
-                    color: isEnable ? widget.bgCircleEnable : Colors.white,
-                    shape: BoxShape.circle),
-              )),
-        ),
-        const SizedBox(height: 20,),
-        const Loading(),
-      ],
+            height: widget.heightSwitch,
+            width: widget.widthSwitch,
+            decoration: BoxDecoration(
+                color: isEnable ? widget.bgCircleEnable : Colors.white,
+                shape: BoxShape.circle),
+          )),
     );
   }
 }
